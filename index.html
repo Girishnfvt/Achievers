@@ -1,0 +1,1525 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Force Vestige Team – NFVT 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#ffd700;--gold2:#b8860b;--gold3:#ffe066;
+  --pink:#ff0080;--blue:#00a8ff;
+  --dark:#0a0500;--dark2:#110800;
+}
+body{font-family:'Segoe UI',sans-serif;background:var(--dark);color:#fff;min-height:100vh;overflow-x:hidden;position:relative}
+
+/* ====== GLITTER BG ====== */
+#glitter-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+body::before{
+  content:'';position:fixed;inset:0;z-index:-1;
+  background:
+    radial-gradient(ellipse at 15% 30%,rgba(255,200,0,.08) 0%,transparent 55%),
+    radial-gradient(ellipse at 85% 70%,rgba(255,165,0,.06) 0%,transparent 55%),
+    radial-gradient(ellipse at 50% 5%,rgba(255,215,0,.04) 0%,transparent 60%),
+    linear-gradient(180deg,var(--dark) 0%,var(--dark2) 50%,var(--dark) 100%);
+  animation:bgPulse 12s ease-in-out infinite;
+}
+@keyframes bgPulse{0%,100%{opacity:1}50%{opacity:.8}}
+header,.hero,.section,footer,.modal,.admin-panel,.toast-msg{position:relative;z-index:2}
+
+/* ====== GOLD TEXT ====== */
+.gold-glassy{
+  font-family:'Cinzel',serif;
+  background:linear-gradient(135deg,#b8860b 0%,#ffe066 20%,#ffd700 45%,#fff0a0 60%,#ffd700 75%,#b8860b 100%);
+  background-size:300% 300%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(0 0 8px rgba(255,215,0,.5));
+  animation:goldShimmer 5s ease-in-out infinite;
+  font-weight:800;letter-spacing:.06em;text-transform:uppercase;position:relative;
+}
+@keyframes goldShimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+/* ====== HEADER ====== */
+header{
+  background:rgba(5,3,0,.9);padding:1rem 2rem;
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,215,0,.2);
+  box-shadow:0 4px 40px rgba(0,0,0,.7);
+}
+header::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,215,0,.7),transparent);
+  animation:scanLine 6s linear infinite;
+}
+@keyframes scanLine{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.header-content{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.logos-container{display:flex;align-items:center;gap:1.5rem}
+.logo-img{height:50px;filter:drop-shadow(0 0 10px rgba(255,215,0,.4));transition:filter .3s}
+.logo-img:hover{filter:drop-shadow(0 0 20px rgba(255,215,0,.9))}
+.header-buttons{display:flex;gap:.7rem;flex-wrap:wrap}
+
+.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#000;border:none;padding:.6rem 1.3rem;border-radius:25px;cursor:pointer;font-weight:700;font-size:.85rem;transition:all .3s;box-shadow:0 0 12px rgba(255,215,0,.25)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 5px 22px rgba(255,215,0,.55)}
+.btn-red{background:linear-gradient(135deg,#c0004a,var(--pink));color:#fff;border:none;padding:.6rem 1.3rem;border-radius:25px;cursor:pointer;font-weight:700;font-size:.85rem;transition:all .3s;box-shadow:0 0 12px rgba(255,0,128,.25)}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 5px 22px rgba(255,0,128,.55)}
+.btn-blue{background:linear-gradient(135deg,#0050c8,var(--blue));color:#fff;border:none;padding:.6rem 1.3rem;border-radius:25px;cursor:pointer;font-weight:700;font-size:.85rem;transition:all .3s}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 5px 22px rgba(0,168,255,.45)}
+
+/* ====== HERO ====== */
+.hero{text-align:center;padding:5rem 2rem 3rem;max-width:1400px;margin:0 auto}
+.hero-welcome{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:rgba(255,215,0,.7);font-weight:300;letter-spacing:.3em;margin-bottom:1rem;text-transform:uppercase}
+.hero-teamname{font-size:3.8rem;margin-bottom:1.5rem;line-height:1.15}
+.hero-tagline{font-family:'Playfair Display',serif;font-size:1.3rem;color:rgba(255,215,0,.8);font-style:italic;margin-bottom:.8rem}
+.hero-year{font-family:'Cinzel',serif;font-size:1.1rem;color:rgba(255,215,0,.5);letter-spacing:.4em;margin-bottom:2rem}
+.hero-divider{width:200px;height:2px;background:linear-gradient(90deg,transparent,#ffd700,transparent);margin:0 auto;animation:divGlow 3s ease-in-out infinite}
+@keyframes divGlow{0%,100%{box-shadow:0 0 5px rgba(255,215,0,.4)}50%{box-shadow:0 0 25px rgba(255,215,0,.9)}}
+
+/* ====== SECTIONS ====== */
+.section{max-width:1400px;margin:4rem auto;padding:0 2rem}
+.section-title{font-size:2.6rem;text-align:center;margin-bottom:.4rem}
+.section-subtitle{text-align:center;color:rgba(255,215,0,.6);font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-bottom:3rem;font-style:italic}
+.two-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;max-width:880px;margin:0 auto}
+.section-divider{width:100%;max-width:600px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,.45),transparent);margin:0 auto 4rem}
+
+/* ====== EXTRA TEXT BLOCKS ====== */
+.extra-text-block{
+  max-width:880px;margin:0 auto 1.5rem;
+  background:rgba(255,215,0,.03);border:1px solid rgba(255,215,0,.12);
+  border-radius:16px;padding:1.2rem 1.6rem;
+  font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(255,255,255,.85);
+  line-height:1.8;
+}
+
+/* ====== ABOUT / DESCRIPTION BANNER — LUXURY BLUE GLASS ====== */
+.about-section-wrap{
+  max-width:1020px;margin:0 auto;position:relative;
+}
+
+.about-banner{
+  position:relative;z-index:1;
+  background:linear-gradient(145deg,
+    rgba(0,12,45,.88) 0%,
+    rgba(0,6,28,.92) 35%,
+    rgba(0,18,58,.86) 70%,
+    rgba(4,8,40,.90) 100%);
+  border-radius:28px;
+  padding:3rem 3.2rem 2.8rem;
+  backdrop-filter:blur(60px) saturate(250%) brightness(1.05);
+  -webkit-backdrop-filter:blur(60px) saturate(250%) brightness(1.05);
+  border:1px solid rgba(80,160,255,.35);
+  overflow:hidden;
+  box-shadow:
+    0 0 100px rgba(0,80,255,.20),
+    0 0 40px rgba(0,120,255,.12),
+    0 12px 60px rgba(0,0,0,.65),
+    inset 0 1px 0 rgba(160,210,255,.20),
+    inset 0 -1px 0 rgba(0,80,255,.12),
+    inset 1px 0 0 rgba(80,160,255,.08),
+    inset -1px 0 0 rgba(80,160,255,.08);
+}
+
+/* Blue inner glow refraction */
+.about-banner::after{
+  content:'';position:absolute;inset:0;border-radius:28px;
+  background:
+    radial-gradient(ellipse 70% 50% at 8% 12%,rgba(0,80,255,.18) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 45% at 92% 85%,rgba(0,160,255,.14) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 60% at 55% 0%,rgba(80,150,255,.12) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 30% at 30% 100%,rgba(0,100,200,.08) 0%,transparent 60%);
+  animation:glassGlow 9s ease-in-out infinite alternate;
+  pointer-events:none;z-index:0;
+}
+@keyframes glassGlow{
+  0%{opacity:.65;transform:scale(1) translateY(0)}
+  100%{opacity:1;transform:scale(1.05) translateY(-5px)}
+}
+/* Blue glass sheen sweep */
+.about-banner::before{
+  content:'';position:absolute;top:0;left:-130%;width:45%;height:100%;
+  background:linear-gradient(105deg,transparent,rgba(140,200,255,.10),rgba(255,255,255,.04),transparent);
+  transform:skewX(-18deg);
+  animation:glassSweep 7s ease-in-out infinite;
+  z-index:3;pointer-events:none;
+}
+@keyframes glassSweep{0%{left:-130%}55%,100%{left:165%}}
+
+/* Everything inside above pseudo */
+.about-banner > *{position:relative;z-index:2}
+
+/* ---- Top Row ---- */
+.about-top-row{
+  display:flex;align-items:flex-start;gap:2rem;
+  margin-bottom:2.2rem;flex-wrap:wrap;
+}
+.about-badge-stack{display:flex;flex-direction:column;gap:.65rem;flex-shrink:0;padding-top:.2rem}
+.about-badge{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-weight:900;font-size:.75rem;padding:.42rem 1.1rem;
+  border-radius:20px;font-family:'Cinzel',serif;
+  letter-spacing:.06em;text-transform:uppercase;
+  box-shadow:0 4px 20px rgba(0,0,0,.35);white-space:nowrap;
+  position:relative;overflow:hidden;
+}
+.about-badge::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
+  transform:translateX(-100%);animation:badgeShine 4s ease-in-out infinite;
+}
+@keyframes badgeShine{0%{transform:translateX(-100%)}50%,100%{transform:translateX(150%)}}
+.badge-gold{background:linear-gradient(135deg,#9a6800,#ffd700,#b8860b);color:#000}
+.badge-green{background:linear-gradient(135deg,#004d25,#00c96b,#007040);color:#fff}
+.badge-purple{background:linear-gradient(135deg,#3a0070,#c86bfa,#5b0ea6);color:#fff}
+
+.about-intro{flex:1;min-width:240px}
+
+/* English headline text */
+.about-heading{
+  font-family:'Cinzel',serif;font-size:1.35rem;font-weight:900;
+  letter-spacing:.04em;margin-bottom:.9rem;line-height:1.3;
+  background:linear-gradient(135deg,#fff 0%,#ffe8a0 40%,#ffd700 70%,#ffb300 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(0 2px 8px rgba(255,215,0,.3));
+}
+.about-main{
+  font-family:'Playfair Display',serif;font-size:1.05rem;
+  color:rgba(255,255,255,.82);line-height:1.95;margin-bottom:.4rem;
+  letter-spacing:.01em;
+}
+.about-main strong{color:#ffd700;font-weight:700}
+
+/* Tamil description block */
+.about-ta-block{
+  margin-top:.85rem;
+  padding:.9rem 1.2rem;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,215,0,.12);
+  border-left:3px solid rgba(255,180,0,.55);
+  border-radius:0 12px 12px 0;
+  backdrop-filter:blur(10px);
+}
+.ta-label{
+  font-size:.65rem;font-family:'Cinzel',serif;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(255,165,0,.6);margin-bottom:.4rem;display:block;
+}
+.about-main-ta{
+  font-size:.96rem;color:rgba(255,215,0,.72);
+  line-height:2;font-family:'Segoe UI',sans-serif;
+  font-weight:400;
+}
+.about-main-ta span.ta-hi{color:#ffd700;font-weight:600}
+.about-main-ta span.ta-hi2{color:#00e676;font-weight:600}
+
+/* ---- Glass Stats Row ---- */
+.income-highlight-box{
+  display:flex;align-items:stretch;gap:0;
+  border-radius:20px;overflow:hidden;
+  margin-bottom:2.4rem;
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 8px 40px rgba(0,0,0,.4);
+  backdrop-filter:blur(20px);
+}
+.income-box-item{
+  flex:1;padding:1.4rem 1rem;text-align:center;
+  background:rgba(255,255,255,.04);
+  transition:background .4s;position:relative;overflow:hidden;
+}
+.income-box-item::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(255,255,255,.04) 0%,transparent 100%);
+  pointer-events:none;
+}
+.income-box-item:hover{background:rgba(255,255,255,.09)}
+.income-box-item+.income-box-item{border-left:1px solid rgba(255,255,255,.08)}
+.income-box-num{
+  font-family:'Cinzel',serif;font-weight:900;font-size:1.8rem;
+  background:linear-gradient(135deg,#ffe57f,#ffa500);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1.05;margin-bottom:.35rem;display:block;
+  animation:statPulse 3s ease-in-out infinite;
+}
+.income-box-item:nth-child(2) .income-box-num{
+  background:linear-gradient(135deg,#69ffb4,#00b0ff);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.income-box-item:nth-child(3) .income-box-num{
+  background:linear-gradient(135deg,#e0aaff,#ff85c8);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+@keyframes statPulse{
+  0%,100%{filter:drop-shadow(0 0 5px rgba(255,200,0,.3))}
+  50%{filter:drop-shadow(0 0 18px rgba(255,200,0,.75))}
+}
+.income-box-label{color:rgba(255,255,255,.65);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-family:'Cinzel',serif;margin-bottom:.18rem}
+.income-box-label-ta{color:rgba(255,215,0,.4);font-size:.65rem;font-family:'Segoe UI',sans-serif}
+
+/* ---- Features Divider Label ---- */
+.feat-divider{
+  display:flex;align-items:center;gap:1rem;
+  margin:0 0 1.6rem;
+}
+.feat-divider::before,.feat-divider::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,215,0,.2),transparent);
+}
+.feat-divider-text{
+  font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,215,0,.5);white-space:nowrap;
+}
+
+/* ---- Feature Cards ---- */
+.about-features{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:1rem;
+}
+.about-feature{
+  display:flex;flex-direction:column;gap:.65rem;
+  border-radius:18px;padding:1.25rem 1.3rem;
+  position:relative;overflow:hidden;
+  transition:transform .4s cubic-bezier(.22,.68,0,1.2),box-shadow .4s,background .4s,border-color .4s;
+  cursor:default;
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+}
+
+/* Glassy hover — transparent luminous effect */
+.about-feature:hover{
+  transform:translateY(-8px) scale(1.03);
+  backdrop-filter:blur(40px) saturate(250%) brightness(1.15);
+  -webkit-backdrop-filter:blur(40px) saturate(250%) brightness(1.15);
+}
+
+/* Glass card backgrounds — unique per feature */
+.feat-1{
+  background:linear-gradient(145deg,rgba(255,180,0,.08),rgba(255,80,0,.04),rgba(0,0,0,.12));
+  border:1px solid rgba(255,180,0,.20);
+}
+.feat-1:hover{
+  background:linear-gradient(145deg,rgba(255,200,0,.18),rgba(255,100,0,.10),rgba(255,255,255,.04));
+  border-color:rgba(255,200,0,.55);
+  box-shadow:0 20px 50px rgba(255,150,0,.22),0 0 30px rgba(255,200,0,.15),inset 0 1px 0 rgba(255,255,200,.20),inset 0 0 20px rgba(255,180,0,.06);
+}
+.feat-2{
+  background:linear-gradient(145deg,rgba(0,200,100,.08),rgba(0,120,255,.04),rgba(0,0,0,.12));
+  border:1px solid rgba(0,200,100,.20);
+}
+.feat-2:hover{
+  background:linear-gradient(145deg,rgba(0,220,120,.18),rgba(0,150,255,.10),rgba(255,255,255,.04));
+  border-color:rgba(0,220,120,.55);
+  box-shadow:0 20px 50px rgba(0,180,100,.22),0 0 30px rgba(0,220,120,.15),inset 0 1px 0 rgba(180,255,220,.20),inset 0 0 20px rgba(0,200,100,.06);
+}
+.feat-3{
+  background:linear-gradient(145deg,rgba(160,60,255,.08),rgba(220,60,200,.04),rgba(0,0,0,.12));
+  border:1px solid rgba(160,60,255,.20);
+}
+.feat-3:hover{
+  background:linear-gradient(145deg,rgba(180,80,255,.18),rgba(240,80,220,.10),rgba(255,255,255,.04));
+  border-color:rgba(180,80,255,.55);
+  box-shadow:0 20px 50px rgba(160,60,255,.22),0 0 30px rgba(200,80,255,.15),inset 0 1px 0 rgba(220,180,255,.20),inset 0 0 20px rgba(160,60,255,.06);
+}
+.feat-4{
+  background:linear-gradient(145deg,rgba(0,190,255,.08),rgba(0,90,200,.04),rgba(0,0,0,.12));
+  border:1px solid rgba(0,190,255,.20);
+}
+.feat-4:hover{
+  background:linear-gradient(145deg,rgba(0,210,255,.18),rgba(0,110,220,.10),rgba(255,255,255,.04));
+  border-color:rgba(0,210,255,.55);
+  box-shadow:0 20px 50px rgba(0,180,255,.22),0 0 30px rgba(0,210,255,.15),inset 0 1px 0 rgba(180,230,255,.20),inset 0 0 20px rgba(0,190,255,.06);
+}
+
+/* Glass top-edge shimmer line */
+.about-feature::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.20),transparent);
+  transition:opacity .4s;
+}
+.about-feature:hover::after{
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);
+}
+
+.feat-top{display:flex;align-items:center;gap:.75rem}
+.feat-icon-wrap{
+  width:44px;height:44px;border-radius:13px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.35rem;flex-shrink:0;
+  box-shadow:0 4px 16px rgba(0,0,0,.3);
+}
+.feat-1 .feat-icon-wrap{background:linear-gradient(135deg,rgba(255,165,0,.45),rgba(255,60,0,.3))}
+.feat-2 .feat-icon-wrap{background:linear-gradient(135deg,rgba(0,200,100,.45),rgba(0,100,255,.3))}
+.feat-3 .feat-icon-wrap{background:linear-gradient(135deg,rgba(160,60,255,.45),rgba(220,60,200,.3))}
+.feat-4 .feat-icon-wrap{background:linear-gradient(135deg,rgba(0,190,255,.45),rgba(0,80,200,.3))}
+
+.feat-en{
+  font-family:'Cinzel',serif;font-size:.85rem;font-weight:700;
+  letter-spacing:.03em;line-height:1.3;
+}
+.feat-1 .feat-en{color:#ffb700}
+.feat-2 .feat-en{color:#00e676}
+.feat-3 .feat-en{color:#d08dff}
+.feat-4 .feat-en{color:#29d3ff}
+
+.feat-desc{
+  color:rgba(255,255,255,.62);font-size:.8rem;line-height:1.6;
+  font-family:'Segoe UI',sans-serif;font-weight:400;
+  border-top:1px solid rgba(255,255,255,.06);padding-top:.55rem;
+}
+.feat-ta{
+  color:rgba(255,215,0,.38);font-size:.73rem;line-height:1.5;
+  font-style:italic;font-family:'Segoe UI',sans-serif;
+  border-top:1px solid rgba(255,255,255,.04);padding-top:.4rem;
+}
+
+.about-highlight{
+  background:linear-gradient(135deg,#ffd700,#ffaa00);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;font-weight:700;
+}
+
+/* ====== LEADER BANNER ====== */
+.leader-banner{
+  background:linear-gradient(145deg,rgba(20,12,0,.95),rgba(10,6,0,.9));
+  border:1px solid rgba(255,215,0,.28);border-radius:24px;padding:2.5rem 2rem;
+  text-align:center;cursor:pointer;position:relative;overflow:hidden;
+  transition:all .4s ease;
+  box-shadow:0 8px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,215,0,.1);
+}
+.leader-banner::before{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,215,0,.06),transparent);
+  transform:skewX(-20deg);animation:bannerShine 4s ease-in-out infinite;
+}
+@keyframes bannerShine{0%{left:-100%}60%,100%{left:160%}}
+.leader-banner:hover{transform:translateY(-12px) scale(1.02);border-color:rgba(255,215,0,.65);box-shadow:0 20px 60px rgba(255,215,0,.22)}
+.rank-badge{position:absolute;top:1rem;right:1rem;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#000;font-size:.62rem;font-weight:900;padding:.28rem .65rem;border-radius:12px;text-transform:uppercase;letter-spacing:.04em;font-family:'Cinzel',serif}
+
+.photo-ring-wrap{position:relative;width:170px;height:170px;margin:0 auto 1.4rem;flex-shrink:0}
+.photo-ring-wrap::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:conic-gradient(#ffd700,#b8860b,#ffe066,#ffd700);animation:spinRing 3s linear infinite}
+@keyframes spinRing{to{transform:rotate(360deg)}}
+.card-photo{width:158px;height:158px;border-radius:50%;object-fit:cover;object-position:center top;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:3px solid #1a0d00;z-index:1;background:#1a0d00}
+
+.achiever-ring-wrap{position:relative;width:140px;height:140px;margin:0 auto 1.2rem;flex-shrink:0}
+.achiever-ring-wrap::before{content:'';position:absolute;inset:-3px;border-radius:50%;background:conic-gradient(#ff0080,#ff8800,#ffd700,#ff0080);animation:spinRing 3s linear infinite}
+.earner-card .achiever-ring-wrap::before{background:conic-gradient(#ffd700,#ffaa00,#ffe066,#ffd700)}
+.worker-card .achiever-ring-wrap::before{background:conic-gradient(#00a8ff,#0050c8,#00ffcc,#00a8ff)}
+.achiever-photo{width:130px;height:130px;border-radius:50%;object-fit:cover;object-position:center top;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:3px solid #0a0500;z-index:1;background:#0a0500}
+.income-label{display:inline-block;margin-top:.55rem;background:linear-gradient(135deg,rgba(255,215,0,.15),rgba(255,165,0,.1));border:1px solid rgba(255,215,0,.45);color:#ffd700;font-size:.92rem;font-weight:700;padding:.3rem .9rem;border-radius:12px;font-family:'Cinzel',serif;letter-spacing:.03em}
+.income-amount{
+  display:inline-block;margin:.6rem 0 .3rem;
+  background:linear-gradient(135deg,#b8860b,#ffd700);
+  color:#000;font-weight:900;font-size:1.15rem;
+  padding:.35rem 1.1rem;border-radius:14px;
+  font-family:'Cinzel',serif;letter-spacing:.03em;
+  box-shadow:0 2px 15px rgba(255,215,0,.4);
+}
+
+.leader-name{font-size:1.55rem;margin-bottom:.4rem}
+.leader-title-txt{color:rgba(255,215,0,.82);font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-style:italic}
+.leader-top-badge{display:inline-block;margin-top:.8rem;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.35);color:#ffd700;font-size:.78rem;padding:.3rem .9rem;border-radius:14px;font-family:'Cinzel',serif}
+.month-badge{margin-top:.5rem;display:inline-block;background:rgba(0,0,0,.55);color:rgba(255,215,0,.85);font-size:.7rem;padding:.2rem .6rem;border-radius:8px;border:1px solid rgba(255,215,0,.25)}
+
+/* Achiever cards */
+.achiever-banner{
+  background:linear-gradient(145deg,rgba(0,20,60,.92),rgba(0,10,40,.95),rgba(5,0,30,.9));
+  border:1px solid rgba(80,160,255,.35);border-radius:24px;padding:2rem 1.5rem;
+  text-align:center;cursor:pointer;position:relative;overflow:hidden;
+  transition:all .4s ease;
+  box-shadow:0 8px 40px rgba(0,0,0,.6),0 0 20px rgba(0,100,255,.08),inset 0 1px 0 rgba(100,180,255,.12);
+}
+.achiever-banner::before{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(100,180,255,.07),transparent);
+  transform:skewX(-20deg);animation:bannerShine2 4s ease-in-out infinite;
+}
+@keyframes bannerShine2{0%{left:-100%}60%,100%{left:160%}}
+.achiever-banner:hover{transform:translateY(-10px) scale(1.02);border-color:rgba(80,180,255,.65);box-shadow:0 20px 60px rgba(0,100,255,.28),0 0 40px rgba(0,150,255,.15)}
+.earner-card{
+  background:linear-gradient(145deg,rgba(10,25,5,.92),rgba(0,20,10,.95),rgba(0,15,5,.9)) !important;
+  border-color:rgba(180,220,80,.35) !important;
+  box-shadow:0 8px 40px rgba(0,0,0,.6),0 0 20px rgba(100,200,0,.08),inset 0 1px 0 rgba(180,255,100,.1) !important;
+}
+.earner-card:hover{border-color:rgba(200,255,80,.6)!important;box-shadow:0 20px 60px rgba(100,200,0,.25),0 0 40px rgba(150,255,50,.12)!important}
+.worker-card{
+  background:linear-gradient(145deg,rgba(0,15,35,.92),rgba(0,8,25,.95),rgba(0,5,20,.9)) !important;
+  border-color:rgba(0,180,255,.35) !important;
+  box-shadow:0 8px 40px rgba(0,0,0,.6),0 0 20px rgba(0,150,255,.1),inset 0 1px 0 rgba(0,200,255,.1) !important;
+}
+.worker-card:hover{border-color:rgba(0,200,255,.65)!important;box-shadow:0 20px 60px rgba(0,150,255,.28),0 0 40px rgba(0,200,255,.15)!important}
+
+.achiever-name{font-family:'Playfair Display',serif;font-size:1.25rem;margin-bottom:.3rem;font-weight:700;color:#e8f4ff}
+.achiever-title-txt{color:rgba(160,210,255,.85);font-size:.92rem;font-style:italic}
+.ach-badge{display:inline-block;margin-top:.75rem;padding:.3rem .9rem;border-radius:14px;font-size:.76rem;font-weight:700}
+.badge-earner{background:linear-gradient(135deg,#1a5c00,#4caf20,#76d43a);color:#fff;box-shadow:0 2px 12px rgba(100,200,0,.3)}
+.badge-worker{background:linear-gradient(135deg,#003a6e,#0077cc,#00aaff);color:#fff;box-shadow:0 2px 12px rgba(0,150,255,.3)}
+.badge-achiever{background:linear-gradient(135deg,#0a2060,#1a4fcc,#4488ff);color:#fff;box-shadow:0 2px 12px rgba(30,100,255,.35)}
+
+/* ====== FOOTER ====== */
+footer{background:rgba(0,0,0,.6);padding:2.5rem 2rem;text-align:center;border-top:1px solid rgba(255,215,0,.18);margin-top:4rem}
+.footer-year{color:rgba(255,215,0,.5);font-size:.9rem;margin-top:.4rem;font-family:'Cinzel',serif;letter-spacing:.2em}
+.footer-copy{color:rgba(255,255,255,.35);font-size:.8rem;margin-top:.4rem}
+
+/* ====== MODAL (achievement view) ====== */
+.modal{display:none;position:fixed;z-index:1000;inset:0;background:rgba(0,0,0,.92);overflow-y:auto;backdrop-filter:blur(12px)}
+.modal-content{background:linear-gradient(145deg,rgba(15,8,0,.98),rgba(5,3,0,.98));margin:3% auto;padding:2.5rem;border:1px solid rgba(255,215,0,.28);border-radius:24px;width:92%;max-width:700px;position:relative;box-shadow:0 20px 80px rgba(0,0,0,.9),0 0 60px rgba(255,215,0,.12)}
+.modal-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid #ffd700;display:block;margin:0 auto 1rem}
+.close{color:#ffd700;float:right;font-size:2rem;font-weight:700;cursor:pointer;line-height:1;transition:color .2s}
+.close:hover{color:#ff0080}
+.story-content{margin-top:1.5rem}
+.youtube-embed{width:100%;height:360px;margin-top:1rem;border-radius:12px}
+
+/* ====== ADMIN PANEL ====== */
+.admin-panel{display:none;position:fixed;z-index:1001;inset:0;background:rgba(0,0,0,.96);overflow-y:auto;backdrop-filter:blur(12px)}
+.admin-content{background:rgba(8,5,0,.98);margin:1.5% auto;padding:2rem;border:1px solid rgba(255,215,0,.28);border-radius:24px;width:96%;max-width:1200px;box-shadow:0 20px 60px rgba(0,0,0,.9),0 0 40px rgba(255,215,0,.1)}
+.admin-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,215,0,.18)}
+.admin-nav{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,215,0,.15)}
+.nav-btn{background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);color:rgba(255,215,0,.85);padding:.55rem 1.1rem;border-radius:18px;cursor:pointer;font-size:.82rem;font-weight:600;transition:all .25s;white-space:nowrap}
+.nav-btn:hover,.nav-btn.active{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#000;border-color:var(--gold)}
+
+/* Forms */
+.admin-form{display:grid;gap:1.2rem;margin-top:1.2rem}
+.form-group{display:grid;gap:.4rem}
+.form-group label{color:var(--gold);font-weight:700;font-size:.85rem;display:flex;align-items:center;gap:.4rem}
+.form-group input,.form-group textarea,.form-group select{padding:.75rem;border-radius:10px;border:1px solid rgba(255,215,0,.28);background:rgba(255,255,255,.06);color:#fff;font-size:.95rem;outline:none;transition:border-color .2s;font-family:inherit}
+.form-group input:focus,.form-group textarea:focus{border-color:rgba(255,215,0,.65);background:rgba(255,255,255,.09)}
+.form-group textarea{resize:vertical;min-height:85px}
+.form-group small{color:rgba(255,255,255,.45);font-size:.75rem}
+
+/* Photo upload area */
+.upload-area{border:2px dashed rgba(255,215,0,.3);border-radius:14px;padding:1.5rem;text-align:center;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.upload-area:hover{border-color:rgba(255,215,0,.65);background:rgba(255,215,0,.04)}
+.upload-area.drag-over{border-color:var(--gold);background:rgba(255,215,0,.08)}
+.upload-area input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.upload-icon{font-size:2rem;color:rgba(255,215,0,.6);margin-bottom:.5rem}
+.upload-text{color:rgba(255,255,255,.6);font-size:.88rem}
+.upload-hint{color:rgba(255,215,0,.5);font-size:.75rem;margin-top:.3rem}
+
+.photo-preview-wrap{position:relative;display:inline-block;margin-top:.8rem}
+.photo-preview{width:100px;height:100px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);display:none}
+.remove-preview{position:absolute;top:-5px;right:-5px;background:var(--pink);border:none;color:#fff;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:.75rem;display:none;align-items:center;justify-content:center}
+
+/* Existing items list */
+.items-list{display:grid;gap:.8rem;margin-top:1.5rem}
+.item-row{background:rgba(255,255,255,.04);padding:.9rem 1rem;border-radius:12px;display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(255,215,0,.1);gap:.8rem;flex-wrap:wrap}
+.item-info{display:flex;align-items:center;gap:.9rem;flex:1;min-width:0}
+.item-thumb{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,215,0,.38);flex-shrink:0}
+.item-text strong{font-size:.95rem}
+.item-text small{color:rgba(255,215,0,.65);font-size:.78rem;display:block;margin-top:.1rem}
+.item-actions{display:flex;gap:.5rem;flex-shrink:0}
+
+.btn-sm{padding:.35rem .85rem;border-radius:10px;border:none;cursor:pointer;font-size:.78rem;font-weight:600;transition:all .2s}
+.btn-edit-sm{background:linear-gradient(135deg,#005588,#00a8ff);color:#fff}
+.btn-edit-sm:hover{box-shadow:0 2px 10px rgba(0,168,255,.4)}
+.btn-del-sm{background:linear-gradient(135deg,#880020,#ff0080);color:#fff}
+.btn-del-sm:hover{box-shadow:0 2px 10px rgba(255,0,128,.4)}
+
+/* Text blocks admin */
+.text-block-row{background:rgba(255,255,255,.04);padding:1rem;border-radius:12px;border:1px solid rgba(255,215,0,.1);margin-bottom:.7rem}
+.text-block-preview{color:rgba(255,255,255,.8);font-size:.92rem;margin-bottom:.6rem;line-height:1.6;max-height:60px;overflow:hidden;text-overflow:ellipsis}
+.text-section-label{color:rgba(255,215,0,.6);font-size:.75rem;font-family:'Cinzel',serif;margin-bottom:.4rem;text-transform:uppercase}
+
+/* TOAST */
+.toast-msg{position:fixed;bottom:2rem;right:2rem;z-index:9999;background:linear-gradient(135deg,rgba(20,12,0,.97),rgba(10,6,0,.97));border:1px solid rgba(255,215,0,.4);padding:.8rem 1.5rem;border-radius:14px;color:#ffd700;font-weight:600;font-size:.9rem;box-shadow:0 8px 30px rgba(0,0,0,.6);transform:translateX(200%);transition:transform .35s ease;display:flex;align-items:center;gap:.6rem}
+.toast-msg.show{transform:translateX(0)}
+.toast-msg.error{border-color:rgba(255,0,128,.5);color:#ff6aaa}
+
+/* Edit overlay modal */
+.edit-overlay{display:none;position:fixed;z-index:1100;inset:0;background:rgba(0,0,0,.94);overflow-y:auto;backdrop-filter:blur(14px)}
+.edit-box{background:rgba(10,6,0,.99);margin:3% auto;padding:2.5rem;border:1px solid rgba(255,215,0,.3);border-radius:24px;width:92%;max-width:700px;box-shadow:0 20px 80px rgba(0,0,0,.9)}
+
+@media(max-width:768px){
+  .hero-teamname{font-size:2.4rem}
+  .section-title{font-size:1.9rem}
+  .two-grid{grid-template-columns:1fr;max-width:400px}
+  .admin-nav{gap:.35rem}
+  .nav-btn{padding:.45rem .8rem;font-size:.75rem}
+  .about-banner{padding:1.8rem 1.4rem}
+  .about-features{grid-template-columns:1fr}
+  .about-top-row{flex-direction:column;gap:1.2rem}
+  .about-badge-stack{flex-direction:row;flex-wrap:wrap;gap:.5rem}
+  .income-highlight-box{flex-direction:column}
+  .income-box-item+.income-box-item{border-left:none;border-top:1px solid rgba(255,255,255,.08)}
+  .income-box-num{font-size:1.4rem}
+  .about-heading{font-size:1.1rem}
+}
+</style>
+</head>
+<body>
+
+<canvas id="glitter-canvas"></canvas>
+
+<!-- HEADER -->
+<header>
+  <div class="header-content">
+    <div class="logos-container">
+      <img src="https://i.postimg.cc/qBYb94K8/NFVT.jpg" alt="NFVT" class="logo-img">
+      <img src="https://i.postimg.cc/HkpQdq37/vestige.png" alt="Vestige" class="logo-img">
+    </div>
+    <div class="header-buttons">
+      <button class="btn-gold" onclick="shareWebsite()"><i class="fas fa-share-alt"></i> Share</button>
+      <button class="btn-red" onclick="openAdmin()"><i class="fas fa-lock"></i> Admin</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <p id="heroTitle" class="hero-welcome">Welcome to</p>
+  <h1 id="teamName" class="hero-teamname gold-glassy">New Force Vestige Team</h1>
+  <p id="tagline" class="hero-tagline">Building Success Together</p>
+  <p class="hero-year">✦ 2026 ✦</p>
+  <div class="hero-divider"></div>
+</section>
+
+<!-- TOP LEADERS -->
+<section class="section" id="sec-leaders">
+  <h2 id="leadersTitle" class="section-title gold-glassy">Our Top Leaders</h2>
+  <p id="leadersSubtitle" class="section-subtitle">Visionaries Leading the NFVT Legacy</p>
+  <div id="leadersExtraText"></div>
+  <div class="two-grid" id="topLeaders"></div>
+</section>
+<div class="section-divider"></div>
+
+<!-- HIGHEST INCOME EARNER -->
+<section class="section" id="sec-earners">
+  <h2 id="earnersTitle" class="section-title gold-glassy">Highest Income Earners</h2>
+  <p id="earnersSubtitle" class="section-subtitle">This Month's Financial Champions in NFVT Team</p>
+  <div id="earnersExtraText"></div>
+  <div class="two-grid" id="topEarners"></div>
+</section>
+<div class="section-divider"></div>
+
+<!-- THIS MONTH NEW ACHIEVER -->
+<section class="section" id="sec-achievers">
+  <h2 id="achieversTitle" class="section-title gold-glassy">This Month New Achievers</h2>
+  <p id="achieversSubtitle" class="section-subtitle">Rising Stars Who Hit New Milestones</p>
+  <div id="achieversExtraText"></div>
+  <div class="two-grid" id="newAchievers"></div>
+</section>
+<div class="section-divider"></div>
+
+<!-- THIS MONTH BEST WORKER -->
+<section class="section" id="sec-worker">
+  <h2 id="workerTitle" class="section-title gold-glassy">This Month Best Worker</h2>
+  <p id="workerSubtitle" class="section-subtitle">Hardest Working Members of the Month</p>
+  <div id="workerExtraText"></div>
+  <div class="two-grid" id="bestWorker"></div>
+</section>
+
+<!-- TEAM DESCRIPTION BANNER — BOTTOM (no rotating ring) -->
+<section class="section" id="sec-about">
+  <div class="about-section-wrap">
+    <div class="about-banner">
+
+      <!-- Top badges + intro -->
+      <div class="about-top-row">
+        <div class="about-badge-stack">
+          <span class="about-badge badge-gold">🚀 Fastest Growing Team</span>
+          <span class="about-badge badge-green">💹 Vestige Network</span>
+          <span class="about-badge badge-purple">✦ 2026 Elite Force</span>
+        </div>
+        <div class="about-intro">
+          <h3 class="about-heading">Building Generational Wealth Through Vestige</h3>
+          <p class="about-main">
+            We are India's <strong>fastest-growing Vestige network team</strong>, driven by a disciplined, proven system that converts effort into lasting financial independence. In just <strong>one year</strong>, our members have consistently broken the barrier of
+            <strong>₹1 Lakh monthly passive income</strong> — a milestone that transforms lives and secures futures.
+          </p>
+          <div class="about-ta-block">
+            <p class="about-main-ta">
+              நாங்கள் இந்தியாவின் <span class="ta-hi">மிக வேகமாக வளரும் Vestige நெட்வொர்க் குழு</span>. ஒரு ஒழுக்கமான, நிரூபிக்கப்பட்ட முறையில் நிதி சுதந்திரத்தை அடைய உதவுகிறோம். வெறும் <span class="ta-hi">ஒரே ஒரு ஆண்டில்</span>, எங்கள் உறுப்பினர்கள் <span class="ta-hi2">மாதம் ₹1 லட்சத்திற்கும் அதிகமான passive income</span> என்ற இலக்கை தொடர்ந்து சாதித்து வருகிறார்கள் — இது வாழ்க்கையை மாற்றும் ஒரு திருப்புமுனை.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Glass Stats Row -->
+      <div class="income-highlight-box">
+        <div class="income-box-item">
+          <span class="income-box-num">₹1 Lakh+</span>
+          <div class="income-box-label">Monthly Passive Income</div>
+          <div class="income-box-label-ta">மாத நிஷ்கிரிய வருமானம்</div>
+        </div>
+        <div class="income-box-item">
+          <span class="income-box-num">1 Year</span>
+          <div class="income-box-label">Proven Achievement</div>
+          <div class="income-box-label-ta">நிரூபிக்கப்பட்ட சாதனை</div>
+        </div>
+        <div class="income-box-item">
+          <span class="income-box-num">100%</span>
+          <div class="income-box-label">Full Support Guaranteed</div>
+          <div class="income-box-label-ta">முழு ஆதரவு உத்தரவாதம்</div>
+        </div>
+      </div>
+
+      <!-- Feature Section Label -->
+      <div class="feat-divider">
+        <div class="feat-divider-text">Our Commitment to Your Success</div>
+      </div>
+
+      <!-- 4 Feature Glass Cards -->
+      <div class="about-features">
+        <div class="about-feature feat-1">
+          <div class="feat-top">
+            <div class="feat-icon-wrap">📡</div>
+            <div class="feat-en">Daily Training Support</div>
+          </div>
+          <div class="feat-desc">Structured daily online sessions, live coaching calls and real-time mentorship to accelerate your network growth every single day.</div>
+          <div class="feat-ta">தினசரி ஆன்லைன் பயிற்சி மற்றும் நேரடி வழிகாட்டுதல் — உங்கள் வளர்ச்சியை ஒவ்வொரு நாளும் முடுக்கிவிடுகிறோம்.</div>
+        </div>
+        <div class="about-feature feat-2">
+          <div class="feat-top">
+            <div class="feat-icon-wrap">🛠️</div>
+            <div class="feat-en">Complete Tools Support</div>
+          </div>
+          <div class="feat-desc">Comprehensive access to digital marketing resources, presentation kits, and business-building assets designed for rapid, scalable growth.</div>
+          <div class="feat-ta">டிஜிட்டல் மார்க்கெட்டிங் கருவிகள், presentation kit மற்றும் வணிக வளர்ச்சிக்கான முழுமையான ஆதரவு வழங்கப்படுகிறது.</div>
+        </div>
+        <div class="about-feature feat-3">
+          <div class="feat-top">
+            <div class="feat-icon-wrap">🎯</div>
+            <div class="feat-en">Skill-Based Training</div>
+          </div>
+          <div class="feat-desc">Rank-specific, targeted skill development programs crafted to sharpen your abilities and fast-track your path to the next level.</div>
+          <div class="feat-ta">உங்கள் rank-க்கு ஏற்ற திறன் மேம்பாட்டு பயிற்சி — அடுத்த நிலைக்கு வேகமாக செல்ல உதவுகிறோம்.</div>
+        </div>
+        <div class="about-feature feat-4">
+          <div class="feat-top">
+            <div class="feat-icon-wrap">🏟️</div>
+            <div class="feat-en">Exclusive Offline Training</div>
+          </div>
+          <div class="feat-desc">Immersive in-person seminars, deep-dive workshops and personalised mentoring sessions that ignite real breakthroughs and lasting results.</div>
+          <div class="feat-ta">நேரடி seminar மற்றும் ஆழமான workshop — உண்மையான முன்னேற்றத்திற்கான தனிப்பட்ட mentoring அனுபவம்.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="gold-glassy" style="font-size:2rem">NFVT</p>
+  <p style="color:rgba(255,215,0,.6);font-size:.9rem">New Force Vestige Team</p>
+  <p class="footer-year">✦ 2026 ✦</p>
+  <p class="footer-copy">© 2026 NFVT. All rights reserved. | Powered by Dedication &amp; Excellence</p>
+</footer>
+
+<!-- ===== ACHIEVEMENT MODAL ===== -->
+<div id="achievementModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalPhoto" class="modal-photo" src="" alt="">
+    <h2 id="modalName" class="gold-glassy" style="font-size:1.7rem;text-align:center;margin-bottom:.3rem"></h2>
+    <p id="modalTitleTxt" style="color:#ffd700;text-align:center;font-size:1rem;font-style:italic;margin-bottom:.5rem"></p>
+    <p id="modalMonth" style="text-align:center;color:rgba(255,215,0,.55);font-size:.85rem;margin-bottom:1rem"></p>
+    <div class="story-content">
+      <h3 style="color:#ffd700;margin-bottom:.7rem;font-family:'Cinzel',serif;font-size:1rem">✦ Achievement Story</h3>
+      <p id="modalStory" style="line-height:1.9;font-size:.98rem;color:rgba(255,255,255,.85)"></p>
+    </div>
+    <div id="modalYoutube"></div>
+  </div>
+</div>
+
+<!-- ===== ADMIN PANEL ===== -->
+<div id="adminPanel" class="admin-panel">
+  <div class="admin-content">
+    <div class="admin-header">
+      <h2 class="gold-glassy" style="font-size:1.8rem">⚙️ Admin Panel</h2>
+      <button class="btn-red" onclick="closeAdmin()"><i class="fas fa-times"></i> Close</button>
+    </div>
+
+    <!-- Login -->
+    <div id="loginSection">
+      <div style="max-width:340px">
+        <div class="form-group">
+          <label><i class="fas fa-key"></i> Admin Password</label>
+          <input type="password" id="adminPassword" placeholder="Enter password" onkeypress="if(event.key==='Enter')adminLogin()">
+        </div>
+        <button class="btn-gold" style="margin-top:1rem;width:100%" onclick="adminLogin()"><i class="fas fa-sign-in-alt"></i> Login</button>
+      </div>
+    </div>
+
+    <!-- Management -->
+    <div id="managementSection" style="display:none">
+      <div class="admin-nav" id="adminNav">
+        <button class="nav-btn" onclick="showSection('text')" data-sec="text"><i class="fas fa-pen"></i> Site Text</button>
+        <button class="nav-btn" onclick="showSection('leaders')" data-sec="leaders"><i class="fas fa-crown"></i> Leaders</button>
+        <button class="nav-btn" onclick="showSection('earners')" data-sec="earners"><i class="fas fa-money-bill-wave"></i> Earners</button>
+        <button class="nav-btn" onclick="showSection('achievers')" data-sec="achievers"><i class="fas fa-star"></i> Achievers</button>
+        <button class="nav-btn" onclick="showSection('worker')" data-sec="worker"><i class="fas fa-trophy"></i> Best Worker</button>
+        <button class="nav-btn" onclick="showSection('extratext')" data-sec="extratext"><i class="fas fa-align-left"></i> Extra Text</button>
+      </div>
+      <div id="managementContent"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== EDIT OVERLAY ===== -->
+<div id="editOverlay" class="edit-overlay">
+  <div class="edit-box">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem">
+      <h3 class="gold-glassy" style="font-size:1.5rem" id="editOverlayTitle">Edit Entry</h3>
+      <button class="btn-red" onclick="closeEditOverlay()"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="editOverlayContent"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast-msg"><i class="fas fa-check-circle"></i><span id="toastText"></span></div>
+
+<script>
+// ============================================================
+//  DATA — Updated with new earners and achievers
+// ============================================================
+const ADMIN_PASS = "nfvt@123";
+let isAdmin = false;
+let currentEditKey = null;
+let currentEditIndex = null;
+let currentEditSection = null;
+
+let D = {
+  heroTitle:"Welcome to",
+  teamName:"New Force Vestige Team",
+  tagline:"Building Success Together",
+  leadersTitle:"Our Top Leaders",
+  leadersSubtitle:"Visionaries Leading the NFVT Legacy",
+  earnersTitle:"Highest Income Earners",
+  earnersSubtitle:"This Month's Financial Champions in NFVT Team",
+  achieversTitle:"This Month New Achievers",
+  achieversSubtitle:"Rising Stars Who Hit New Milestones",
+  workerTitle:"This Month Best Worker",
+  workerSubtitle:"Hardest Working Members of the Month",
+  extraText:{
+    leaders:[],earners:[],achievers:[],worker:[]
+  },
+  leaders:[
+    {name:"Saravanan S",title:"DUCD – Double Universal Crown Director",
+     photo:"https://i.postimg.cc/sQvh4YSP/photo.jpg",
+     story:"Saravanan S has achieved the extraordinary rank of Double Universal Crown Director (DUCD), leading the NFVT team to heights of excellence. His visionary leadership has inspired hundreds.",
+     youtube:"",month:""},
+    {name:"Girish S",title:"Universal Crown Director",
+     photo:"https://i.postimg.cc/XvTq85tC/Girish_S_small_size.jpg",
+     story:"Girish S has achieved the prestigious Universal Crown Director rank through dedication and hard work. His journey is an inspiration to every NFVT member.",
+     youtube:"",month:""}
+  ],
+  topEarners:[
+    {name:"Sengolrani",title:"Star Director",photo:"https://i.postimg.cc/Kjs4thPR/Sengolrani.jpg",story:"Outstanding income achievement this month with earnings of ₹66,197/-. A remarkable milestone that reflects dedication, consistency and true leadership spirit in NFVT team.",youtube:"",month:"January 2026",income:"₹66,197/-"},
+    {name:"Karthikeyan MJ",title:"Diamond Director",photo:"https://i.postimg.cc/bNsZpdP3/Karthikeyan.jpg",story:"Exceptional performance and earnings of ₹65,827/- this month, showcasing outstanding business acumen and team leadership.",youtube:"",month:"January 2026",income:"₹65,827/-"}
+  ],
+  newAchievers:[
+    {name:"Madhumitha",title:"Star Director",photo:"https://i.postimg.cc/SNGRr5tv/Madhumitha.jpg",story:"Just achieved Star Director rank this month! A truly inspiring milestone earned through consistent hard work and dedication.",youtube:"",month:"January 2026"},
+    {name:"Priyanka",title:"Star Director",photo:"https://i.postimg.cc/zGh3HMVp/Priyanka.jpg",story:"Amazing achievement this month reaching Star Director rank. A rising star in the NFVT family!",youtube:"",month:"January 2026"}
+  ],
+  bestWorker:[
+    {name:"Best Worker 1",title:"Top Performer",photo:"https://via.placeholder.com/150/0a0500/ffd700?text=W1",story:"Hardest working member with outstanding results.",youtube:"",month:"January 2026"},
+    {name:"Best Worker 2",title:"Star Performer",photo:"https://via.placeholder.com/150/0a0500/ffd700?text=W2",story:"Exceptional work ethic and results.",youtube:"",month:"January 2026"}
+  ]
+};
+
+// ============================================================
+//  STORAGE
+// ============================================================
+function save(){localStorage.setItem('nfvt_2026_v2',JSON.stringify(D))}
+function load(){
+  try{
+    const s=localStorage.getItem('nfvt_2026_v2');
+    if(s){const p=JSON.parse(s);D=Object.assign({},D,p);if(!D.extraText)D.extraText={leaders:[],earners:[],achievers:[],worker:[]}}
+  }catch(e){}
+  renderAll();
+}
+
+// ============================================================
+//  TOAST
+// ============================================================
+function toast(msg,err=false){
+  const t=document.getElementById('toast');
+  document.getElementById('toastText').textContent=msg;
+  t.className='toast-msg show'+(err?' error':'');
+  setTimeout(()=>{t.className='toast-msg'+(err?' error':'')},2800);
+}
+
+// ============================================================
+//  RENDER ALL
+// ============================================================
+function renderAll(){
+  const ids=['heroTitle','teamName','tagline','leadersTitle','leadersSubtitle','earnersTitle','earnersSubtitle','achieversTitle','achieversSubtitle','workerTitle','workerSubtitle'];
+  ids.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el)el.textContent=D[id]||'';
+  });
+  renderLeaders();renderEarners();renderAchievers();renderWorkers();
+  renderExtraTexts();
+}
+
+function renderLeaders(){
+  const c=document.getElementById('topLeaders');
+  if(!D.leaders.length){c.innerHTML=empty('leaders');return}
+  c.innerHTML=D.leaders.map((p,i)=>`
+    <div class="leader-banner" onclick='showAch(${JSON.stringify(p)})'>
+      <div class="rank-badge">${i===0?'👑 DUCD':'🏆 UCD'}</div>
+      <div class="photo-ring-wrap">
+        <img class="card-photo" src="${p.photo}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/155/1a0d00/ffd700?text=${enc(p.name)}'">
+      </div>
+      <h3 class="leader-name gold-glassy">${p.name}</h3>
+      <p class="leader-title-txt">${p.title}</p>
+      <span class="leader-top-badge">✦ Top Leader NFVT</span>
+      ${p.month?`<div class="month-badge">📅 ${p.month}</div>`:''}
+    </div>`).join('');
+}
+
+function renderEarners(){
+  const c=document.getElementById('topEarners');
+  if(!D.topEarners.length){c.innerHTML=empty('earners');return}
+  c.innerHTML=D.topEarners.map(p=>`
+    <div class="achiever-banner earner-card" onclick='showAch(${JSON.stringify(p)})'>
+      <div class="achiever-ring-wrap">
+        <img class="achiever-photo" src="${p.photo}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/130/0a0500/ffd700?text=${enc(p.name)}'">
+      </div>
+      <h3 class="achiever-name">${p.name}</h3>
+      <p class="achiever-title-txt">${p.title}</p>
+      ${p.income?`<div class="income-amount">💰 ${p.income}</div>`:''}
+      <span class="ach-badge badge-earner">🏆 Top Income Earner</span>
+    </div>`).join('');
+}
+
+function renderAchievers(){
+  const c=document.getElementById('newAchievers');
+  if(!D.newAchievers.length){c.innerHTML=empty('achievers');return}
+  c.innerHTML=D.newAchievers.map(p=>`
+    <div class="achiever-banner" onclick='showAch(${JSON.stringify(p)})'>
+      <div class="achiever-ring-wrap">
+        <img class="achiever-photo" src="${p.photo}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/126/0a0500/ffd700?text=${enc(p.name)}'">
+      </div>
+      <h3 class="achiever-name">${p.name}</h3>
+      <p class="achiever-title-txt">${p.title}</p>
+      <span class="ach-badge badge-achiever">⭐ New Achiever</span>
+      ${p.month?`<div class="month-badge">📅 ${p.month}</div>`:''}
+    </div>`).join('');
+}
+
+function renderWorkers(){
+  const c=document.getElementById('bestWorker');
+  if(!D.bestWorker.length){c.innerHTML=empty('workers');return}
+  c.innerHTML=D.bestWorker.map(p=>`
+    <div class="achiever-banner worker-card" onclick='showAch(${JSON.stringify(p)})'>
+      <div class="achiever-ring-wrap">
+        <img class="achiever-photo" src="${p.photo}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/126/0a0500/ffd700?text=${enc(p.name)}'">
+      </div>
+      <h3 class="achiever-name">${p.name}</h3>
+      <p class="achiever-title-txt">${p.title}</p>
+      <span class="ach-badge badge-worker">🏅 Best Worker</span>
+      ${p.month?`<div class="month-badge">📅 ${p.month}</div>`:''}
+    </div>`).join('');
+}
+
+function renderExtraTexts(){
+  ['leaders','earners','achievers','worker'].forEach(sec=>{
+    const c=document.getElementById(sec+'ExtraText');
+    if(!c)return;
+    const arr=D.extraText[sec]||[];
+    c.innerHTML=arr.map(t=>`<div class="extra-text-block">${t}</div>`).join('');
+  });
+}
+
+function empty(s){return`<p style="text-align:center;color:rgba(255,255,255,.35);grid-column:1/-1">No ${s} added yet.</p>`}
+function enc(n){return encodeURIComponent((n||'?').slice(0,2))}
+
+// ============================================================
+//  ACHIEVEMENT MODAL
+// ============================================================
+function showAch(p){
+  document.getElementById('modalPhoto').src=p.photo;
+  document.getElementById('modalName').textContent=p.name;
+  document.getElementById('modalTitleTxt').textContent=p.title+(p.income?' — '+p.income:'');
+  document.getElementById('modalMonth').textContent=p.month?'📅 '+p.month:'';
+  document.getElementById('modalStory').textContent=p.story||'No story added yet.';
+  const yd=document.getElementById('modalYoutube');
+  if(p.youtube){
+    const vid=ytId(p.youtube);
+    yd.innerHTML=`<h3 style="color:#ffd700;margin:1.5rem 0 .8rem;font-family:'Cinzel',serif;font-size:.95rem">▶ Watch Success Story</h3>
+      <iframe class="youtube-embed" src="https://www.youtube.com/embed/${vid}" frameborder="0" allowfullscreen></iframe>`;
+  }else yd.innerHTML='';
+  document.getElementById('achievementModal').style.display='block';
+}
+function closeModal(){document.getElementById('achievementModal').style.display='none'}
+function ytId(u){const m=u.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);return m?m[1]:''}
+
+// ============================================================
+//  ADMIN
+// ============================================================
+function openAdmin(){document.getElementById('adminPanel').style.display='block'}
+function closeAdmin(){
+  document.getElementById('adminPanel').style.display='none';
+  isAdmin=false;
+  document.getElementById('loginSection').style.display='block';
+  document.getElementById('managementSection').style.display='none';
+  document.getElementById('adminPassword').value='';
+}
+function adminLogin(){
+  if(document.getElementById('adminPassword').value===ADMIN_PASS){
+    isAdmin=true;
+    document.getElementById('loginSection').style.display='none';
+    document.getElementById('managementSection').style.display='block';
+    showSection('text');
+  }else toast('❌ Incorrect password',true);
+}
+
+function setActiveNav(sec){
+  document.querySelectorAll('.nav-btn').forEach(b=>{
+    b.classList.toggle('active',b.dataset.sec===sec);
+  });
+}
+
+// ============================================================
+//  SECTION VIEWS
+// ============================================================
+function showSection(sec){
+  setActiveNav(sec);
+  const c=document.getElementById('managementContent');
+
+  if(sec==='text'){
+    c.innerHTML=`
+      <h3 style="color:#ffd700;font-family:'Cinzel',serif;font-size:1.2rem;margin-bottom:1.2rem">✏️ Edit All Site Text</h3>
+      <div class="admin-form">
+        ${textField('heroTitle','Hero Label',D.heroTitle,'e.g. Welcome to')}
+        ${textField('edit_teamName','Team Name',D.teamName,'')}
+        ${textField('edit_tagline','Tagline',D.tagline,'')}
+        ${textField('edit_leadersTitle','Leaders Section Title',D.leadersTitle,'')}
+        ${textField('edit_leadersSubtitle','Leaders Subtitle',D.leadersSubtitle,'')}
+        ${textField('edit_earnersTitle','Earners Section Title',D.earnersTitle,'')}
+        ${textField('edit_earnersSubtitle','Earners Subtitle',D.earnersSubtitle,'')}
+        ${textField('edit_achieversTitle','Achievers Section Title',D.achieversTitle,'')}
+        ${textField('edit_achieversSubtitle','Achievers Subtitle',D.achieversSubtitle,'')}
+        ${textField('edit_workerTitle','Best Worker Section Title',D.workerTitle,'')}
+        ${textField('edit_workerSubtitle','Best Worker Subtitle',D.workerSubtitle,'')}
+        <button class="btn-gold" onclick="saveText()"><i class="fas fa-save"></i> Save All Text</button>
+      </div>`;
+    return;
+  }
+
+  if(sec==='extratext'){
+    const secs=[
+      {key:'leaders',label:'Leaders Section'},
+      {key:'earners',label:'Income Earners Section'},
+      {key:'achievers',label:'New Achievers Section'},
+      {key:'worker',label:'Best Worker Section'}
+    ];
+    c.innerHTML=`
+      <h3 style="color:#ffd700;font-family:'Cinzel',serif;font-size:1.2rem;margin-bottom:1.2rem">📝 Add / Edit Extra Text Blocks</h3>
+      <p style="color:rgba(255,255,255,.5);font-size:.85rem;margin-bottom:1.5rem">Add informational text blocks that appear below each section heading on the public page.</p>
+      ${secs.map(s=>`
+        <div style="margin-bottom:2rem">
+          <h4 style="color:rgba(255,215,0,.75);font-size:.9rem;font-family:'Cinzel',serif;margin-bottom:.8rem;text-transform:uppercase;letter-spacing:.05em">${s.label}</h4>
+          <div id="extList_${s.key}" class="items-list">
+            ${renderExtList(s.key)}
+          </div>
+          <div class="admin-form" style="margin-top:1rem">
+            <div class="form-group">
+              <label><i class="fas fa-paragraph"></i> New Text Block</label>
+              <textarea id="extInput_${s.key}" placeholder="Type text to add below ${s.label} heading..." rows="3"></textarea>
+            </div>
+            <button class="btn-gold" style="max-width:200px" onclick="addExtraText('${s.key}')"><i class="fas fa-plus"></i> Add Text</button>
+          </div>
+        </div>
+      `).join('<hr style="border-color:rgba(255,215,0,.1);margin:1.5rem 0">')}`;
+    return;
+  }
+
+  const map={
+    leaders:{data:D.leaders,key:'leaders',name:'Leader',max:0},
+    earners:{data:D.topEarners,key:'topEarners',name:'Income Earner',max:2},
+    achievers:{data:D.newAchievers,key:'newAchievers',name:'New Achiever',max:2},
+    worker:{data:D.bestWorker,key:'bestWorker',name:'Best Worker',max:2}
+  };
+  const m=map[sec];
+  const maxNote=m.max?`<span style="color:rgba(255,215,0,.5);font-size:.78rem;margin-left:.4rem">(max ${m.max} shown)</span>`:'';
+
+  c.innerHTML=`
+    <h3 style="color:#ffd700;font-family:'Cinzel',serif;font-size:1.2rem;margin-bottom:1.2rem">Manage ${m.name}s ${maxNote}</h3>
+    ${addForm(sec,m.key,m.name)}
+    <h4 style="color:#ffd700;margin:2rem 0 .8rem;font-family:'Cinzel',serif;font-size:1rem">Existing ${m.name}s</h4>
+    <div class="items-list" id="list_${sec}">
+      ${renderList(m.data,m.key,sec)}
+    </div>`;
+}
+
+// ============================================================
+//  TEXT FIELD HELPER
+// ============================================================
+function textField(id,label,val,ph){
+  return`<div class="form-group"><label>${label}</label><input type="text" id="${id}" value="${(val||'').replace(/"/g,'&quot;')}" placeholder="${ph}"></div>`;
+}
+
+function addForm(sec,key,name){
+  const isEarner=(key==='topEarners');
+  return`
+    <div class="admin-form" style="background:rgba(255,215,0,.03);border:1px solid rgba(255,215,0,.12);border-radius:16px;padding:1.5rem">
+      <h4 style="color:rgba(255,215,0,.8);font-size:.95rem;font-family:'Cinzel',serif">➕ Add New ${name}</h4>
+      <div class="form-group">
+        <label><i class="fas fa-user"></i> Full Name</label>
+        <input type="text" id="add_name_${sec}" placeholder="Enter full name">
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-medal"></i> Rank / Title</label>
+        <input type="text" id="add_title_${sec}" placeholder="e.g. Crown Director">
+      </div>
+      ${isEarner?`<div class="form-group">
+        <label><i class="fas fa-rupee-sign"></i> Income Amount</label>
+        <input type="text" id="add_income_${sec}" placeholder="e.g. ₹56,883/-">
+      </div>`:''}
+      <div class="form-group">
+        <label><i class="fas fa-camera"></i> Photo</label>
+        <div class="upload-area" id="uploadArea_${sec}" onclick="triggerUpload('${sec}')">
+          <input type="file" id="photoFile_${sec}" accept="image/*" onchange="handlePhoto('${sec}',this)">
+          <div class="upload-icon">📸</div>
+          <p class="upload-text">Click or drag & drop photo here</p>
+          <p class="upload-hint">JPG, PNG, WEBP • Auto-compressed</p>
+        </div>
+        <div class="photo-preview-wrap" id="previewWrap_${sec}">
+          <img id="photoPreview_${sec}" class="photo-preview" src="" alt="">
+          <button class="remove-preview" id="removePreview_${sec}" onclick="clearPhoto('${sec}')"><i class="fas fa-times"></i></button>
+        </div>
+        <div style="margin-top:.5rem;color:rgba(255,255,255,.4);font-size:.75rem;text-align:center">— or paste URL below —</div>
+        <input type="text" id="add_photoUrl_${sec}" placeholder="https://i.postimg.cc/..." oninput="urlPreview('${sec}',this.value)">
+        <input type="hidden" id="add_photoData_${sec}" value="">
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-calendar"></i> Month (optional)</label>
+        <input type="text" id="add_month_${sec}" placeholder="e.g. January 2026">
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-align-left"></i> Achievement Story</label>
+        <textarea id="add_story_${sec}" placeholder="Write achievement story..."></textarea>
+      </div>
+      <div class="form-group">
+        <label><i class="fab fa-youtube"></i> YouTube Link (optional)</label>
+        <input type="text" id="add_youtube_${sec}" placeholder="https://youtube.com/watch?v=...">
+      </div>
+      <button class="btn-gold" onclick="addItem('${key}','${sec}')"><i class="fas fa-plus-circle"></i> Add ${name}</button>
+    </div>`;
+}
+
+// ============================================================
+//  RENDER LIST
+// ============================================================
+function renderList(data,key,sec){
+  if(!data.length)return`<p style="color:rgba(255,255,255,.35);text-align:center;padding:1rem">No entries yet.</p>`;
+  return data.map((item,i)=>`
+    <div class="item-row" id="row_${key}_${i}">
+      <div class="item-info">
+        <img class="item-thumb" src="${item.photo}" alt="" onerror="this.style.display='none'">
+        <div class="item-text">
+          <strong>${item.name}</strong>
+          <small>${item.title}</small>
+          ${item.month?`<small style="color:rgba(255,255,255,.4)">📅 ${item.month}</small>`:''}
+        </div>
+      </div>
+      <div class="item-actions">
+        <button class="btn-sm btn-edit-sm" onclick="openEdit('${key}',${i},'${sec}')"><i class="fas fa-edit"></i> Edit</button>
+        <button class="btn-sm btn-del-sm" onclick="delItem('${key}',${i},'${sec}')"><i class="fas fa-trash"></i></button>
+      </div>
+    </div>`).join('');
+}
+
+function renderExtList(sec){
+  const arr=D.extraText[sec]||[];
+  if(!arr.length)return`<p style="color:rgba(255,255,255,.3);font-size:.85rem;text-align:center;padding:.5rem">No text blocks added.</p>`;
+  return arr.map((t,i)=>`
+    <div class="text-block-row">
+      <div class="text-section-label">${sec.toUpperCase()} TEXT BLOCK ${i+1}</div>
+      <div class="text-block-preview">${t}</div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <button class="btn-sm btn-edit-sm" onclick="editExtText('${sec}',${i})"><i class="fas fa-edit"></i> Edit</button>
+        <button class="btn-sm btn-del-sm" onclick="delExtText('${sec}',${i})"><i class="fas fa-trash"></i> Remove</button>
+      </div>
+    </div>`).join('');
+}
+
+// ============================================================
+//  PHOTO HANDLING
+// ============================================================
+function triggerUpload(sec){document.getElementById('photoFile_'+sec).click()}
+
+function handlePhoto(sec,input){
+  const file=input.files[0];
+  if(!file)return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    const data=e.target.result;
+    compressImage(data,600,(compressed)=>{
+      document.getElementById('add_photoData_'+sec).value=compressed;
+      document.getElementById('add_photoUrl_'+sec).value='';
+      showPhotoPreview(sec,compressed);
+    });
+  };
+  reader.readAsDataURL(file);
+}
+
+function compressImage(src,maxSize,cb){
+  const img=new Image();
+  img.onload=()=>{
+    let w=img.width,h=img.height;
+    if(w>maxSize||h>maxSize){
+      if(w>h){h=Math.round(h*maxSize/w);w=maxSize}
+      else{w=Math.round(w*maxSize/h);h=maxSize}
+    }
+    const canvas=document.createElement('canvas');
+    canvas.width=w;canvas.height=h;
+    canvas.getContext('2d').drawImage(img,0,0,w,h);
+    cb(canvas.toDataURL('image/jpeg',0.82));
+  };
+  img.src=src;
+}
+
+function urlPreview(sec,url){
+  if(url){
+    document.getElementById('add_photoData_'+sec).value='';
+    showPhotoPreview(sec,url);
+  }else clearPhoto(sec);
+}
+
+function showPhotoPreview(sec,src){
+  const img=document.getElementById('photoPreview_'+sec);
+  const btn=document.getElementById('removePreview_'+sec);
+  img.src=src;img.style.display='block';
+  btn.style.display='flex';
+}
+
+function clearPhoto(sec){
+  document.getElementById('add_photoData_'+sec).value='';
+  document.getElementById('add_photoUrl_'+sec).value='';
+  document.getElementById('photoFile_'+sec).value='';
+  document.getElementById('photoPreview_'+sec).style.display='none';
+  document.getElementById('removePreview_'+sec).style.display='none';
+}
+
+// ============================================================
+//  ADD ITEM
+// ============================================================
+function addItem(key,sec){
+  const name=document.getElementById('add_name_'+sec).value.trim();
+  const title=document.getElementById('add_title_'+sec).value.trim();
+  const photoData=document.getElementById('add_photoData_'+sec).value;
+  const photoUrl=document.getElementById('add_photoUrl_'+sec).value.trim();
+  const photo=photoData||photoUrl;
+  const month=document.getElementById('add_month_'+sec).value.trim();
+  const story=document.getElementById('add_story_'+sec).value.trim();
+  const youtube=document.getElementById('add_youtube_'+sec).value.trim();
+  const incomeEl=document.getElementById('add_income_'+sec);
+  const income=incomeEl?incomeEl.value.trim():'';
+
+  if(!name||!title||!photo){toast('⚠️ Name, Title and Photo are required.',true);return}
+
+  const maxMap={topEarners:2,newAchievers:2,bestWorker:2};
+  const max=maxMap[key];
+  if(max&&D[key].length>=max){
+    if(!confirm(`Already ${max} entries. Remove oldest and add new?`))return;
+    D[key].shift();
+  }
+
+  D[key].push({name,title,photo,month,story,youtube,income});
+  save();renderAll();
+
+  ['name','title','month','story','youtube'].forEach(f=>{
+    const el=document.getElementById('add_'+f+'_'+sec);
+    if(el)el.value='';
+  });
+  if(incomeEl)incomeEl.value='';
+  clearPhoto(sec);
+  showSection(sec);
+  toast('✅ '+name+' added!');
+}
+
+// ============================================================
+//  DELETE ITEM
+// ============================================================
+function delItem(key,i,sec){
+  if(!confirm('Delete "'+D[key][i].name+'"?'))return;
+  D[key].splice(i,1);
+  save();renderAll();showSection(sec);
+  toast('🗑️ Deleted.');
+}
+
+// ============================================================
+//  EDIT ITEM
+// ============================================================
+function openEdit(key,i,sec){
+  const p=D[key][i];
+  currentEditKey=key;currentEditIndex=i;currentEditSection=sec;
+  document.getElementById('editOverlayTitle').textContent='Edit – '+p.name;
+  const isEarner=(key==='topEarners');
+
+  document.getElementById('editOverlayContent').innerHTML=`
+    <div class="admin-form">
+      <div class="form-group">
+        <label><i class="fas fa-user"></i> Full Name</label>
+        <input type="text" id="edt_name" value="${(p.name||'').replace(/"/g,'&quot;')}">
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-medal"></i> Rank / Title</label>
+        <input type="text" id="edt_title" value="${(p.title||'').replace(/"/g,'&quot;')}">
+      </div>
+      ${isEarner?`<div class="form-group">
+        <label><i class="fas fa-rupee-sign"></i> Income Amount</label>
+        <input type="text" id="edt_income" value="${(p.income||'').replace(/"/g,'&quot;')}" placeholder="e.g. ₹56,883/-">
+      </div>`:''}
+      <div class="form-group">
+        <label><i class="fas fa-camera"></i> Photo</label>
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.6rem">
+          <img id="edtPhotoImg" src="${p.photo}" style="width:85px;height:85px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid rgba(255,215,0,.5)" onerror="this.style.display='none'">
+          <div>
+            <p style="color:rgba(255,255,255,.6);font-size:.82rem;margin-bottom:.4rem">Current photo</p>
+            <button class="btn-sm btn-del-sm" onclick="removeEditPhoto()"><i class="fas fa-trash"></i> Remove Photo</button>
+          </div>
+        </div>
+        <div class="upload-area" onclick="document.getElementById('edtPhotoFile').click()">
+          <input type="file" id="edtPhotoFile" accept="image/*" onchange="handleEditPhoto(this)" style="display:none">
+          <p class="upload-text">📸 Upload new photo</p>
+          <p class="upload-hint">JPG, PNG, WEBP • Auto-compressed</p>
+        </div>
+        <input type="text" id="edt_photoUrl" value="${p.photo||''}" placeholder="Or paste image URL" oninput="updateEditPreview(this.value)" style="margin-top:.5rem">
+        <input type="hidden" id="edt_photoData" value="">
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-calendar"></i> Month</label>
+        <input type="text" id="edt_month" value="${(p.month||'').replace(/"/g,'&quot;')}" placeholder="e.g. January 2026">
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-align-left"></i> Story</label>
+        <textarea id="edt_story">${p.story||''}</textarea>
+      </div>
+      <div class="form-group">
+        <label><i class="fab fa-youtube"></i> YouTube Link</label>
+        <input type="text" id="edt_youtube" value="${(p.youtube||'').replace(/"/g,'&quot;')}" placeholder="https://youtube.com/watch?v=...">
+      </div>
+      <div style="display:flex;gap:.8rem;flex-wrap:wrap">
+        <button class="btn-gold" onclick="saveEdit()"><i class="fas fa-save"></i> Save Changes</button>
+        <button class="btn-red" onclick="closeEditOverlay()"><i class="fas fa-times"></i> Cancel</button>
+      </div>
+    </div>`;
+
+  document.getElementById('editOverlay').style.display='block';
+}
+
+function handleEditPhoto(input){
+  const file=input.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    compressImage(e.target.result,600,compressed=>{
+      document.getElementById('edt_photoData').value=compressed;
+      document.getElementById('edt_photoUrl').value='';
+      document.getElementById('edtPhotoImg').src=compressed;
+      document.getElementById('edtPhotoImg').style.display='block';
+    });
+  };
+  reader.readAsDataURL(file);
+}
+
+function removeEditPhoto(){
+  document.getElementById('edt_photoData').value='';
+  document.getElementById('edt_photoUrl').value='';
+  document.getElementById('edtPhotoFile').value='';
+  document.getElementById('edtPhotoImg').src='';
+  document.getElementById('edtPhotoImg').style.display='none';
+}
+
+function updateEditPreview(url){
+  document.getElementById('edt_photoData').value='';
+  if(url){document.getElementById('edtPhotoImg').src=url;document.getElementById('edtPhotoImg').style.display='block';}
+  else document.getElementById('edtPhotoImg').style.display='none';
+}
+
+function saveEdit(){
+  const photoData=document.getElementById('edt_photoData').value;
+  const photoUrl=document.getElementById('edt_photoUrl').value.trim();
+  const photo=photoData||photoUrl||D[currentEditKey][currentEditIndex].photo;
+  const incomeEl=document.getElementById('edt_income');
+  D[currentEditKey][currentEditIndex]={
+    ...D[currentEditKey][currentEditIndex],
+    name:document.getElementById('edt_name').value.trim(),
+    title:document.getElementById('edt_title').value.trim(),
+    photo,
+    month:document.getElementById('edt_month').value.trim(),
+    story:document.getElementById('edt_story').value.trim(),
+    youtube:document.getElementById('edt_youtube').value.trim(),
+    income:incomeEl?incomeEl.value.trim():(D[currentEditKey][currentEditIndex].income||'')
+  };
+  save();renderAll();closeEditOverlay();showSection(currentEditSection);
+  toast('✅ Changes saved!');
+}
+
+function closeEditOverlay(){document.getElementById('editOverlay').style.display='none'}
+
+// ============================================================
+//  EXTRA TEXT
+// ============================================================
+function addExtraText(sec){
+  const val=document.getElementById('extInput_'+sec).value.trim();
+  if(!val){toast('⚠️ Text cannot be empty.',true);return}
+  if(!D.extraText[sec])D.extraText[sec]=[];
+  D.extraText[sec].push(val);
+  document.getElementById('extInput_'+sec).value='';
+  save();renderExtraTexts();
+  document.getElementById('extList_'+sec).innerHTML=renderExtList(sec);
+  toast('✅ Text block added!');
+}
+
+function editExtText(sec,i){
+  const cur=D.extraText[sec][i];
+  const newVal=prompt('Edit text block:',cur);
+  if(newVal===null)return;
+  if(!newVal.trim()){toast('⚠️ Text cannot be empty.',true);return}
+  D.extraText[sec][i]=newVal.trim();
+  save();renderExtraTexts();
+  document.getElementById('extList_'+sec).innerHTML=renderExtList(sec);
+  toast('✅ Updated!');
+}
+
+function delExtText(sec,i){
+  if(!confirm('Remove this text block?'))return;
+  D.extraText[sec].splice(i,1);
+  save();renderExtraTexts();
+  document.getElementById('extList_'+sec).innerHTML=renderExtList(sec);
+  toast('🗑️ Removed.');
+}
+
+// ============================================================
+//  SAVE SITE TEXT
+// ============================================================
+function saveText(){
+  const m={
+    heroTitle:'heroTitle',
+    edit_teamName:'teamName',
+    edit_tagline:'tagline',
+    edit_leadersTitle:'leadersTitle',
+    edit_leadersSubtitle:'leadersSubtitle',
+    edit_earnersTitle:'earnersTitle',
+    edit_earnersSubtitle:'earnersSubtitle',
+    edit_achieversTitle:'achieversTitle',
+    edit_achieversSubtitle:'achieversSubtitle',
+    edit_workerTitle:'workerTitle',
+    edit_workerSubtitle:'workerSubtitle'
+  };
+  Object.entries(m).forEach(([id,key])=>{
+    const el=document.getElementById(id);
+    if(el)D[key]=el.value;
+  });
+  save();renderAll();toast('✅ Text saved!');
+}
+
+// ============================================================
+//  SHARE
+// ============================================================
+function shareWebsite(){
+  const url=window.location.href;
+  if(navigator.share)navigator.share({title:'New Force Vestige Team',text:'Check out NFVT achievements 2026!',url});
+  else navigator.clipboard.writeText(url).then(()=>toast('🔗 Link copied!'));
+}
+
+// ============================================================
+//  OUTSIDE CLICK CLOSE
+// ============================================================
+window.onclick=e=>{
+  if(e.target===document.getElementById('achievementModal'))closeModal();
+  if(e.target===document.getElementById('adminPanel'))closeAdmin();
+  if(e.target===document.getElementById('editOverlay'))closeEditOverlay();
+};
+
+// ============================================================
+//  GLITTER ANIMATION
+// ============================================================
+function initGlitter(){
+  const canvas=document.getElementById('glitter-canvas');
+  const ctx=canvas.getContext('2d');
+  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
+  resize();window.addEventListener('resize',resize);
+
+  const GOLDS=['rgba(255,215,0,','rgba(255,200,0,','rgba(255,180,0,','rgba(255,240,100,','rgba(212,175,55,','rgba(255,255,200,','rgba(255,165,0,'];
+  const COUNT=200;
+  const glitters=[];
+
+  class G{
+    constructor(){this.reset(true)}
+    reset(r){
+      this.x=Math.random()*canvas.width;
+      this.y=r?Math.random()*canvas.height:canvas.height+10;
+      this.size=Math.random()*2.8+0.4;
+      this.vy=-(Math.random()*.9+.15);
+      this.vx=(Math.random()-.5)*.5;
+      this.op=Math.random()*.85+.15;
+      this.opDir=(Math.random()-.5)*.025;
+      this.color=GOLDS[Math.floor(Math.random()*GOLDS.length)];
+      this.rot=Math.random()*Math.PI*2;
+      this.rotV=(Math.random()-.5)*.1;
+      this.twinkle=Math.random()*Math.PI*2;
+      this.twinkleV=Math.random()*.06+.01;
+      this.type=Math.random()>.4?'diamond':'star';
+    }
+    update(){
+      this.y+=this.vy;this.x+=this.vx;
+      this.rot+=this.rotV;this.twinkle+=this.twinkleV;
+      this.op+=this.opDir;
+      if(this.op>1){this.op=1;this.opDir*=-1}
+      if(this.op<.05){this.op=.05;this.opDir*=-1}
+      if(this.y<-20||this.x<-30||this.x>canvas.width+30)this.reset(false);
+    }
+    draw(){
+      const o=this.op*(0.55+0.45*Math.sin(this.twinkle));
+      ctx.save();ctx.translate(this.x,this.y);ctx.rotate(this.rot);
+      ctx.fillStyle=this.color+o+')';
+      ctx.shadowBlur=7;ctx.shadowColor=this.color+'0.9)';
+      const s=this.size;
+      if(this.type==='diamond'){
+        ctx.beginPath();ctx.moveTo(0,-s*2.2);ctx.lineTo(s*.9,0);ctx.lineTo(0,s*2.2);ctx.lineTo(-s*.9,0);ctx.closePath();ctx.fill();
+      }else{
+        ctx.beginPath();
+        for(let i=0;i<4;i++){
+          const a=(i/4)*Math.PI*2;
+          ctx.lineTo(Math.cos(a)*s*2.2,Math.sin(a)*s*2.2);
+          ctx.lineTo(Math.cos(a+Math.PI/4)*s*.55,Math.sin(a+Math.PI/4)*s*.55);
+        }
+        ctx.closePath();ctx.fill();
+      }
+      ctx.fillStyle='rgba(255,255,255,'+(o*.9)+')';
+      ctx.beginPath();ctx.arc(0,0,s*.35,0,Math.PI*2);ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  for(let i=0;i<COUNT;i++)glitters.push(new G());
+
+  const bursts=[];
+  let bt=0;
+  function burst(){
+    const bx=Math.random()*canvas.width,by=Math.random()*canvas.height*.85;
+    for(let i=0;i<16;i++){
+      const a=(i/16)*Math.PI*2;
+      bursts.push({x:bx,y:by,vx:Math.cos(a)*(Math.random()*3.5+.5),vy:Math.sin(a)*(Math.random()*3.5+.5),life:1,decay:Math.random()*.022+.008,size:Math.random()*3+.8,color:GOLDS[Math.floor(Math.random()*GOLDS.length)]});
+    }
+  }
+
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    glitters.forEach(g=>{g.update();g.draw()});
+    for(let i=bursts.length-1;i>=0;i--){
+      const b=bursts[i];
+      b.x+=b.vx;b.y+=b.vy;b.life-=b.decay;b.vx*=.96;b.vy*=.96;
+      if(b.life<=0){bursts.splice(i,1);continue}
+      ctx.save();ctx.globalAlpha=b.life;
+      ctx.fillStyle=b.color+b.life+')';ctx.shadowBlur=12;ctx.shadowColor=b.color+'1)';
+      ctx.beginPath();ctx.arc(b.x,b.y,b.size,0,Math.PI*2);ctx.fill();
+      ctx.restore();
+    }
+    bt++;if(bt>90){burst();bt=0}
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+
+// ============================================================
+//  INIT
+// ============================================================
+window.onload=function(){load();initGlitter()};
+</script>
+</body>
+</html>
