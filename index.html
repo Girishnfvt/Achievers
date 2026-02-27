@@ -718,6 +718,8 @@ footer{background:rgba(5,3,0,.85);padding:2.5rem 2rem;text-align:center;border-t
       <div id="modalYoutube"></div>
       <!-- Gallery -->
       <div id="modalGallery"></div>
+      <!-- Worker Pillars of Excellence -->
+      <div id="modalWorkerPillars" style="display:none"></div>
     </div>
   </div>
 </div>
@@ -915,8 +917,8 @@ const DEFAULT_DATA={
     {name:"Priyanka",title:"Star Director",photo:"https://i.postimg.cc/zGh3HMVp/Priyanka.jpg",story:"Amazing achievement this month reaching Star Director rank.",youtube:"",month:"January 2026"}
   ],
   bestWorker:[
-    {name:"Best Worker 1",title:"Top Performer",photo:"https://via.placeholder.com/150/000010/00f5ff?text=W1",story:"Hardest working member with outstanding results.",youtube:"",month:"January 2026"},
-    {name:"Best Worker 2",title:"Star Performer",photo:"https://via.placeholder.com/150/000010/00f5ff?text=W2",story:"Exceptional work ethic and results.",youtube:"",month:"January 2026"}
+    {name:"Sukila",title:"Bronze Director",photo:"https://i.postimg.cc/hjsf0q6t/Sukila.jpg",story:"This month, Sukila has demonstrated absolute excellence in every dimension of team building. Her follow-up discipline is second to none — ensuring no prospect or team member is ever left without guidance. Her unwavering commitment to the NFVT mission, rock-solid consistency in 100PV achievement, and relentless drive have produced outstanding, measurable results this month. A true Pillar of Excellence for the entire team.",youtube:"",month:"February 2026"},
+    {name:"Harini Gopalakrishnan",title:"Bronze Director",photo:"https://i.postimg.cc/J0ht62C2/Harini.jpg",story:"Harini Gopalakrishnan has set the gold standard for excellence this month. Her meticulous follow-up system, deep commitment to her team growth, and unbreakable consistency have translated into exceptional results. She leads by example every single day — showing the entire NFVT team what dedication and discipline truly look like. Her achievements this month stand as an inspiration to all rising leaders.",youtube:"",month:"February 2026"}
   ]
 };
 let D=JSON.parse(JSON.stringify(DEFAULT_DATA));
@@ -943,6 +945,10 @@ function load(){
         if(!D.leaders[1].story||D.leaders[1].story.indexOf('3,64,640')===-1){
           D.leaders[1].story="Girish S (Sundaram Girish) has achieved the prestigious Universal Crown Director rank with verified Govt. GST filings. In January 2026 alone, his taxable income was ₹3,64,640 — with ₹65,635 GST paid to the Govt. (CGST + SGST) as per GSTR-1 & GSTR-3B filed on GST portal. He crossed ₹1 Lakh+ monthly income, acquired a house & car, and earned Vestige-sponsored foreign trips to Switzerland and Dubai. 100% government-verified income.";
         }
+      }
+      // Ensure bestWorker always has Sukila & Harini if stored data has placeholders
+      if(D.bestWorker&&D.bestWorker.length>0&&D.bestWorker[0].name==='Best Worker 1'){
+        D.bestWorker=DEFAULT_DATA.bestWorker;
       }
     }
   }catch(e){}
@@ -1137,6 +1143,56 @@ function showAch(p){
     </div>`;
   }else gd.innerHTML='';
 
+  // Worker Pillar of Excellence section
+  const workerPillarDiv=document.getElementById('modalWorkerPillars');
+  const isWorker=D.bestWorker&&D.bestWorker.some(w=>w.name===p.name);
+  if(isWorker&&workerPillarDiv){
+    workerPillarDiv.innerHTML=`
+      <div class="worker-pillars-section">
+        <div class="modal-section-head" style="margin-top:1.8rem">
+          <div class="modal-section-head-line"></div>
+          <div class="modal-section-label">🏅 This Month's Pillars of Excellence</div>
+          <div class="modal-section-head-line"></div>
+        </div>
+        <div class="worker-pillars-grid">
+          <div class="worker-pillar-card pillar-excellence">
+            <span class="pillar-icon-wrap">🎯</span>
+            <div class="pillar-card-title">Excellence of Work</div>
+            <div class="pillar-card-desc">Outstanding quality and dedication in every task — setting the standard for the entire NFVT team this month.</div>
+          </div>
+          <div class="worker-pillar-card pillar-followup">
+            <span class="pillar-icon-wrap">📞</span>
+            <div class="pillar-card-title">Follow-up Champion</div>
+            <div class="pillar-card-desc">Never misses a follow-up. Every prospect, every team member — guided with precision and care, consistently.</div>
+          </div>
+          <div class="worker-pillar-card pillar-commitment">
+            <span class="pillar-icon-wrap">💪</span>
+            <div class="pillar-card-title">Commitment</div>
+            <div class="pillar-card-desc">100% committed to the NFVT mission — shows up every single day with full energy and purpose, no excuses.</div>
+          </div>
+          <div class="worker-pillar-card pillar-consistency">
+            <span class="pillar-icon-wrap">🔁</span>
+            <div class="pillar-card-title">Consistency</div>
+            <div class="pillar-card-desc">Steady, reliable, unstoppable. Consistent 100PV, consistent meetings, consistent growth — month after month.</div>
+          </div>
+          <div class="worker-pillar-card pillar-results">
+            <span class="pillar-icon-wrap">🏆</span>
+            <div class="pillar-card-title">Results</div>
+            <div class="pillar-card-desc">Proven, measurable outcomes — real team growth, real rank progression, real income impact this month.</div>
+          </div>
+          <div class="worker-pillar-card pillar-congrats">
+            <span class="pillar-icon-wrap">🌟</span>
+            <div class="pillar-card-title">Congratulations!</div>
+            <div class="pillar-card-desc">Your dedication inspires the whole team. Keep leading the way — NFVT is proud of you! 🙏</div>
+          </div>
+        </div>
+      </div>`;
+    workerPillarDiv.style.display='block';
+  }else if(workerPillarDiv){
+    workerPillarDiv.innerHTML='';
+    workerPillarDiv.style.display='none';
+  }
+
   // Activate blur backdrop
   document.getElementById('backdropBlur').classList.add('active');
 
@@ -1314,5 +1370,30 @@ function shareWebsite(){const url=window.location.href;if(navigator.share)naviga
 document.addEventListener('dblclick',e=>e.preventDefault(),{passive:false});
 window.onload=function(){load();initGalaxy()};
 </script>
+
+<!-- WORKER PILLARS CSS -->
+<style>
+.worker-pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;margin-top:.9rem}
+@media(max-width:600px){.worker-pillars-grid{grid-template-columns:repeat(2,1fr)}.worker-pillars-grid .pillar-congrats{grid-column:1/-1}}
+.worker-pillar-card{border-radius:16px;padding:1.1rem 1rem;text-align:center;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s;cursor:default}
+.worker-pillar-card:hover{transform:translateY(-6px) scale(1.03)}
+.pillar-excellence{background:linear-gradient(145deg,rgba(255,215,0,.07),rgba(180,120,0,.04));border:1px solid rgba(255,215,0,.28)}
+.pillar-excellence:hover{border-color:rgba(255,215,0,.6);box-shadow:0 16px 40px rgba(255,215,0,.2)}
+.pillar-followup{background:linear-gradient(145deg,rgba(0,245,255,.07),rgba(0,100,200,.04));border:1px solid rgba(0,245,255,.28)}
+.pillar-followup:hover{border-color:rgba(0,245,255,.6);box-shadow:0 16px 40px rgba(0,245,255,.2)}
+.pillar-commitment{background:linear-gradient(145deg,rgba(255,0,200,.07),rgba(150,0,255,.04));border:1px solid rgba(255,0,200,.28)}
+.pillar-commitment:hover{border-color:rgba(255,0,200,.6);box-shadow:0 16px 40px rgba(255,0,200,.2)}
+.pillar-consistency{background:linear-gradient(145deg,rgba(0,255,136,.07),rgba(0,180,80,.04));border:1px solid rgba(0,255,136,.28)}
+.pillar-consistency:hover{border-color:rgba(0,255,136,.6);box-shadow:0 16px 40px rgba(0,255,136,.2)}
+.pillar-results{background:linear-gradient(145deg,rgba(255,106,0,.07),rgba(200,60,0,.04));border:1px solid rgba(255,106,0,.28)}
+.pillar-results:hover{border-color:rgba(255,106,0,.6);box-shadow:0 16px 40px rgba(255,106,0,.2)}
+.pillar-congrats{background:linear-gradient(145deg,rgba(191,0,255,.07),rgba(100,0,200,.04));border:1px solid rgba(191,0,255,.28)}
+.pillar-congrats:hover{border-color:rgba(191,0,255,.6);box-shadow:0 16px 40px rgba(191,0,255,.2)}
+.pillar-icon-wrap{font-size:1.8rem;margin-bottom:.55rem;display:block;filter:drop-shadow(0 0 8px rgba(255,215,0,.4))}
+.pillar-card-title{font-family:'Cinzel',serif;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.45rem;background:linear-gradient(135deg,#ffd700,#fff5a0,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.pillar-congrats .pillar-card-title{background:linear-gradient(135deg,#bf00ff,#00f5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.pillar-card-desc{font-size:.72rem;color:rgba(255,255,255,.65);line-height:1.65;font-family:'Segoe UI',sans-serif}
+</style>
+
 </body>
 </html>
